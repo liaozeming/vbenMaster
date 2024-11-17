@@ -20,6 +20,7 @@ import AnalyticsVisitsData from './analytics-visits-data.vue';
 import AnalyticsVisitsSales from './analytics-visits-sales.vue';
 import AnalyticsVisitsSource from './analytics-visits-source.vue';
 
+
 const overviewItems: AnalysisOverviewItem[] = [
   {
     icon: SvgCardIcon,
@@ -64,6 +65,7 @@ const chartTabs: TabOption[] = [
 </script>
 
 <template>
+
   <div class="p-5">
     <AnalysisOverview :items="overviewItems" />
     <AnalysisChartsTabs :tabs="chartTabs" class="mt-5">

@@ -9,16 +9,17 @@ const routes: RouteRecordRaw[] = [
   {
     component: BasicLayout,
     meta: {
-      icon: 'ion:grid-outline',
-      title: $t('page.home.title'),
+      icon: 'ic:baseline-30fps-select', 
+      title: $t('测试'),
+      order: 11,
     },
     name: 'TestRoute',
     path: '/testRoute',
-    redirect: '/testRoute/test1',
+    // redirect: '/testRoute/test1',
     children: [
       {
         name: 'test1',
-        path: '/test1',
+        path: 'test1',
         component: () => import('#/views/myComponents/test1.vue'),
         meta: {
           title: $t('test1'),
@@ -26,15 +27,16 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'test2',
-        path: '/test2',
+        path: 'test2',
         component: () => import('#/views/myComponents/test2.vue'),
         meta: {
           title: $t('test2'),
+          authority: ['super'],
         },
       },
       {
         name: 'test3',
-        path: '/test3',
+        path: 'test3',
         component: () => import('#/views/myComponents/test3.vue'),
         meta: {
           title: $t('test3'),
@@ -42,7 +44,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'tableTest',
-        path: '/tableTest',
+        path: 'tableTest',
         component: () => import('#/views/tableTest/basicTable.vue'),
         meta: {
           title: $t('tableTest'),
@@ -50,7 +52,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         name: 'addPage',
-        path: '/addPage',
+        path: 'addPage',
         component: () => import('#/views/tableTest/addPage.vue'),
         meta: {
           title: $t('addPage'),
@@ -58,12 +60,22 @@ const routes: RouteRecordRaw[] = [
         },
       },
       {
-        name: 'userAvatar',
-        path: '/userAvatar',
-        component: () => import('#/views/tableTest/UserAvatar.vue'),
+        name: 'tableList1',
+        path: 'tableList',
+        component: () => import('#/views/tableTest/tableList.vue'),
         meta: {
-          title: $t('userAvatar'),
+          title: 'ccctableList',
         },
+        
+      },
+      {
+        name: 'avatar',
+        path: 'avatar',
+        component: () => import('#/views/tableTest/avatar.vue'),
+        meta: {
+          title: 'avatar',
+        },
+        
       },
     ],
   },
