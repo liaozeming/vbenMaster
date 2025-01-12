@@ -11,6 +11,7 @@ import App from './app.vue';
 import { router } from './router';
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import Antd from 'ant-design-vue';
 
 async function bootstrap(namespace: string) {
   const app = createApp(App);
@@ -28,6 +29,9 @@ async function bootstrap(namespace: string) {
   app.use(router);
   //ElementPlus
   app.use(ElementPlus)
+
+  app.use(Antd);
+
 
   app.mount('#app');
 }

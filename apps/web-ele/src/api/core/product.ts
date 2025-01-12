@@ -71,3 +71,8 @@ export async function productPageList(productpage :any) {
 export async function getProductDetail(params :any) {
   return requestClient.get<Product>('/product/detail',{params});
 }
+
+//产品Topic
+export async function getProductTopic(params :any) {
+  return requestClient.get<any>('/product/topics',{params});
+}

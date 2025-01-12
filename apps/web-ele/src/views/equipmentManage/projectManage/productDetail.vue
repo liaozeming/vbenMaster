@@ -14,7 +14,7 @@
       <el-descriptions-item label="产品名称:">{{ product?.productName }}</el-descriptions-item>
       <el-descriptions-item label="ProductKey:">{{ product?.productKey }}</el-descriptions-item>
       <el-descriptions-item label="ProductSecret:">{{ product?.productSecret }}</el-descriptions-item>
-      <el-descriptions-item label="设备数:"> 3 <el-button type="text" @click="" style="margin-left: 2%;">前往管理</el-button>
+      <el-descriptions-item label="设备数:"> 3 <el-button type="text" @click="toEquipments()" style="margin-left: 2%;">前往管理</el-button>
       </el-descriptions-item>
     </el-descriptions>
 
@@ -40,11 +40,11 @@
       </el-tab-pane>
 
       <el-tab-pane label="Topic 类列表" name="second">
-        <topic-list></topic-list>
+        <topic-list :productKey="product?.productKey"></topic-list>
       </el-tab-pane>
 
       <el-tab-pane label="功能定义" name="third">
-        <product-function-define/>
+        <product-function-define :productKey="product?.productKey"/>
       </el-tab-pane>
       <el-tab-pane label="消息解析" name="fourth">消息解析</el-tab-pane>
     </el-tabs>
@@ -57,8 +57,8 @@ import { reactive, computed, ref } from 'vue'
 import type { Product } from '#/api/core/product';
 import { getProductDetail } from '#/api/core/product'
 import { useRouter } from 'vue-router';
-import topicList from '#/views/equipmentManage/topicList.vue'
-import productFunctionDefine from '#/views/equipmentManage/productFunctionDefine.vue'
+import topicList from './topicList.vue'
+import productFunctionDefine from './productFunctionDefine.vue'
 
 const router = useRouter();
 
@@ -92,6 +92,9 @@ const goBack = () => {
   emit('backToProject')
 }
 
+const toEquipments = () => {
+  router.push({ path: '/equipment/equipmentManage'});
+}
 </script>
 
 

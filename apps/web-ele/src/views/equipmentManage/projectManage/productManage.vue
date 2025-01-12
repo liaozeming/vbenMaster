@@ -5,7 +5,7 @@
       <template #header>
         <div class="card-header">
           <span>产品管理</span>
-          <el-button class="button" text @click="createProduct()">创建产品</el-button>
+          <el-button class="button"  type="primary"  @click="createProduct()">创建产品</el-button>
         </div>
       </template>
 
@@ -137,8 +137,6 @@ searchProduct()
 //查看
 const productDetailId = ref('')
 const getProductDetail = async (index: number, product: Product) => {
-  console.log(index)
-  console.log(product.id)
   show.value = !show.value
   pageShow.value = false
   productDetailId.value = product.id
@@ -209,7 +207,7 @@ const backToProjectList = async () => {
 
 const rules = reactive({
   productName: [
-    { required: true, message: '请输入产品名称', trigger: 'blur' },
+    { required: true, message: '请输入产品名称', trigger: 'change' },
   ],
   type: [
     { required: true, message: '请输入所属品类', trigger: 'change' },

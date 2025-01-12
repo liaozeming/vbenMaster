@@ -17,45 +17,54 @@ const routes: RouteRecordRaw[] = [
     path: '/monitor',
     children: [
       {
-        name: 'monitor1',
-        path: 'monitor1',
-        component: () => import('#/views/myComponents/equipment.vue'),
+        name: 'dashboard',
+        path: 'dashboard',
+        component: () => import('#/views/monitor/dashboard.vue'),
         meta: {
           title: $t('实时监控'),
           icon :"ant-design:monitor-outlined"
         },
       },
       {
-        name: 'monitor2',
-        path: 'monitor2',
-        component: () => import('#/views/myComponents/equipment.vue'),
+        name: 'online',
+        path: 'online',
+        component: () => import('#/views/monitor/index.vue'),
         meta: {
           title: $t('在线调试'),
           icon:"codicon:debug-console"
         },
       },
       {
-        name: 'monitor3',
-        path: 'monitor3',
-        component: () => import('#/views/myComponents/equipment.vue'),
+        name: 'log',
+        path: 'log',
+        component: () => import('#/views/log/index.vue'),
         meta: {
           title: $t('日志服务'),
           icon:"pajamas:log" 
         },
       },
       {
-        name: 'monitor4',
-        path: 'monitor4',
-        component: () => import('#/views/myComponents/equipment.vue'),
+        name: 'task',
+        path: 'task',
+        component: () => import('#/views/task/index.vue'),
         meta: {
           title: $t('任务管理'),
           icon:"fluent-mdl2:task-list"
         },
       },
       {
-        name: 'monitor5',
-        path: 'monitor5',
-        component: () => import('#/views/myComponents/equipment.vue'),
+        name: 'taskDetail',
+        path: 'taskDetail/:id',
+        component: () => import('#/views/task/detail.vue'),
+            meta: {
+                title: $t('任务详情'),
+                    hideInMenu : true
+            },
+      },
+      {
+        name: 'event',
+        path: 'event',
+        component: () => import('#/views/event/index.vue'),
         meta: {
           title: $t('事件响应'),
           icon:"clarity:event-solid"
